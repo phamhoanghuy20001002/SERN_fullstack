@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         specialtyID: DataTypes.INTEGER,
     }, {
         sequelize,
-        modelName: 'Histories',
+        modelName: 'D_C_S',
     });
     return D_C_S;
 };

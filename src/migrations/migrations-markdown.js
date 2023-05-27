@@ -3,26 +3,37 @@ module.exports = {
     up: async (queryInterface, Sequelize) => {
         //add corlum
 
-        await queryInterface.createTable('schedules', {
+        await queryInterface.createTable('markdowns', {
+
+
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            currentNumber: {
-                type: Sequelize.INTEGER
+            contentHTML: {
+                allowNull: false,
+                type: Sequelize.TEXT('long')
             },
-            maxNumber: {
-                type: Sequelize.INTEGER
+            contentMarkDown: {
+                allowNull: false,
+                type: Sequelize.TEXT('long')
             },
-            date: {
-                type: Sequelize.STRING
-            },
-            timeType: {
-                type: Sequelize.STRING
+            description: {
+                allowNull: true,
+                type: Sequelize.TEXT('long')
             },
             doctorId: {
+                allowNull: true,
+                type: Sequelize.INTEGER
+            },
+            specialityId: {
+                allowNull: true,
+                type: Sequelize.INTEGER
+            },
+            clinicId: {
+                allowNull: true,
                 type: Sequelize.INTEGER
             },
 
@@ -38,6 +49,6 @@ module.exports = {
         });
     },
     down: async (queryInterface, Sequelize) => {
-        await queryInterface.dropTable('schedules');
+        await queryInterface.dropTable('markdowns');
     }
 };
