@@ -3,7 +3,7 @@ module.exports = {
     up: async (queryInterface, Sequelize) => {
         //add corlum
 
-        await queryInterface.createTable('specialties', {
+        await queryInterface.createTable('Specialties', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
@@ -11,12 +11,15 @@ module.exports = {
                 type: Sequelize.INTEGER
             },
             image: {
-                type: Sequelize.STRING
+                type: Sequelize.BLOB('long'),
             },
             name: {
                 type: Sequelize.STRING
             },
-            description: {
+            descriptionHTML: {
+                type: Sequelize.TEXT
+            },
+            descriptionMarkdown: {
                 type: Sequelize.TEXT
             },
 

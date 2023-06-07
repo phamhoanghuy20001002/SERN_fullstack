@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get crud</title>
+</head>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+
+<body>
+    <table style="width: 100%">
+        <tr>
+            <th>Email</th>
+            <th>Fisrt name</th>
+            <th>Last name</th>
+            <th>address</th>
+            <th>actions</th>
+
+        </tr>
+        <% for(let i=0; i < datatable.length; i++) { %>
+            <tr>
+                <td>
+                    <%= datatable[i].email %>
+                </td>
+                <td>
+                    <%= datatable[i].firstName %>
+                </td>
+                <td>
+                    <%= datatable[i].lastName %>
+                </td>
+                <td>
+                    <%= datatable[i].address %>
+                </td>
+                <td>
+                    <a href="/edit-crud?id=<%=datatable[i].id%>" class="btn-edit" type="button">Edit</a>
+                    <a href="/delete-crud?id=<%=datatable[i].id%>" class="btn-delete" type="button">delete</a>
+
+                </td>
+            </tr>
+            <% } %>
+    </table>
+</body>
+
+</html>

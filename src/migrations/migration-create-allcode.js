@@ -2,7 +2,7 @@
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         //add corlum
-        await queryInterface.createTable('allcodes', {
+        await queryInterface.createTable('Allcodes', {
             id: {
                 allowNull: false,
                 autoIncrement: true,

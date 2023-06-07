@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
             Allcodes.hasMany(models.Doctor_infor, { foreignKey: 'priceId', as: 'priceData' })
             Allcodes.hasMany(models.Doctor_infor, { foreignKey: 'provinceId', as: 'provinceData' })
             Allcodes.hasMany(models.Doctor_infor, { foreignKey: 'paymentId', as: 'paymentData' })
+            Allcodes.hasMany(models.Bookings, { foreignKey: 'timeType', as: 'timeTypeDataPatient' })
 
             // define association here
         }
@@ -24,8 +25,8 @@ module.exports = (sequelize, DataTypes) => {
     Allcodes.init({
         keyMap: DataTypes.STRING,
         type: DataTypes.STRING,
-        valueEN: DataTypes.STRING,
-        valueVI: DataTypes.STRING,
+        valueEn: DataTypes.STRING,
+        valueVi: DataTypes.STRING,
 
     }, {
         sequelize,
